@@ -3,6 +3,9 @@
 
 Pontos trabalhados:
 - Rotas
+- Módulos
+- Views
+- Controllers
 - Integração MongoDB
 - EJS
 - Express
