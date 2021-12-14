@@ -10,16 +10,38 @@
 
       <%- include('includes/messagens') %>
 
-      <div class="responsive-table">
-        <table class="table my-3">
-          <tr>
-            <td>Luis</td>
-            <td>Otávio</td>
-            <td>2122222222</td>
-            <td>ulisses@gmail.com</td>
-          </tr>
-        </table>
-      </div>
+      <% if(contatos.length > 0) { %>
+        <div class="responsive-table">
+          <table class="table my-3">
+            
+            <% contatos.forEach(contato => { %>
+            <tr>
+              <td><%= contato.nome %></td>
+              <td><%= contato.sobrenome %></td>
+              <td><%= contato.email %></td>
+              <td><%= contato.telefone %></td>
+              <td><a href="/contato/index/<%= contato._id %>">Editar</a></td>
+              <td><a class='text-danger' href="/contato/delete/<%= contato._id %>">Excluir</a></td>
+            </tr> 
+            <% }); %>
+  
+          </table>
+        </div>        
+
+      <% } else { %>
+
+        <p class="text-center lead">Você ainda não tem contato</p><br>
+        <div class="row">
+          <div class="col-lg">
+            <form action="/contato/index" method="get">
+             <p class="text-center lead"><button type="submit" class="btn btn-primary"> Crie Agora</button></p> 
+            </form> 
+          </div>
+          
+        </div>
+    
+      <% } %>
+
 
 
 

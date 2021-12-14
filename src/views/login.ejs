@@ -12,28 +12,28 @@
       <%- include('includes/messagens'); %>
 
       <div class="row">
-        <div class="col-lg">
+        <div class="col-lg my-3">
           <h4>Faça seu Cadastro</h4>
           <p>Se ainda não tem sua conta, crie aqui:</p>
-          <form action="/login/register" method="POST">
+          <form class="form-cadastro"action="/login/register" method="POST">
             <input type="hidden" name="_csrf" value=<%= csrfToken %>> 
             <div class="form-group">
               <label>Seu Email</label>
               <input type="email" class="form-control" name='email'>
             </div>
-            <div class="form-group">
+            <div class="form-group"> 
               <label>Sua Senha</label>
               <input type="password" class="form-control" name='password'>
             </div>
-            <button type="submit" class="btn btn-primary">Criar conta</button>
+            <button type="submit" class="btn btn-primary my-2">Criar conta</button>
           </form>
         </div>
 
-        <div class="col-lg">
+        <div class="col-lg my-3">
           <h4>Faça seu Login</h4>
 
           <p>Faça seu login:</p>
-          <form action="/login/login" method="POST">
+          <form class="form-login" action="/login/login" method="POST">
             <input type="hidden" name="_csrf" value=<%= csrfToken %>> <!-- proteção do form-->
 
             <div class="form-group">
@@ -44,7 +44,7 @@
               <label>Sua Senha</label>
               <input type="password" class="form-control" name='password'>
             </div>
-            <button type="submit" class="btn btn-primary">Entrar</button>
+            <button type="submit" class="btn btn-primary my-2">Entrar</button>
             
           </form>
         </div>

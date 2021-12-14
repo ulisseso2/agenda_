@@ -10,12 +10,20 @@
 
       <%- include('includes/messagens') %>
 
+      <% if(contato._id) { %>
+      <form action="/contato/edit/<%= contato._id %>" method="POST">
+      <% } else { %>
       <form action="/contato/register" method="POST">
+      <% } %>
+
+
         <input type="hidden" name="_csrf" value=<%= csrfToken %>> 
+        
         <div class="form-group">
           <label>Nome</label>
           <input value='<%= contato.nome %>' type="text" class="form-control" name='nome'>
         </div>
+
         <div class="form-group">
           <label>Sobrenome</label>
           <input value='<%= contato.sobrenome %>' type="text" class="form-control" name='sobrenome'>

@@ -1,4 +1,8 @@
-exports.index = (req, res, next) =>{
-    res.render('index')
+const Contato = require('../models/ContatoModel')
+
+
+exports.index = async (req, res) =>{
+    const contatos = await Contato.buscaContatos()
+    res.render('index', { contatos })//injetei os contatos dentro do index
 }
 
