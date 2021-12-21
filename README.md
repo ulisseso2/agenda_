@@ -21,6 +21,7 @@ Conexão com mongoDB usando mongoose;
 Hash de senhas;
 CRUD (Create, Read, Update, Delete);
 Middlewares
+Configuração de servidor
 
 ![telaagenda](https://user-images.githubusercontent.com/88331289/145999791-9995035f-6045-4ede-ab11-de71ee45ed59.png)
 
